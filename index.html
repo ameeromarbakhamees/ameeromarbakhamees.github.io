@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>أمير عمر باخميس</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+<style>
+  /* Layout: single centered column (link-in-bio), ivory ground, oud accents, Amiri throughout */
+  :root{
+    --bg:#E7DBC2; --surface:#F5ECD8; --surface-2:#EFE4CC;
+    --ink:#4A3734; --ink-soft:#8C7A69;
+    --oud:#8E1E2C; --oud-deep:#6E1420; --oud-soft:#E7CEC7; --on-oud:#F7EFDD;
+    --line:#D6C0A2; --radius:16px; --maxw:560px;
+    --shadow:0 1px 2px rgba(74,55,52,.05), 0 6px 20px rgba(74,55,52,.06);
+  }
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+    --bg:#1F1613; --surface:#2C2420; --surface-2:#352A25;
+    --ink:#F1E9D6; --ink-soft:#BBA894;
+    --oud:#CF5A66; --oud-deep:#B5323E; --oud-soft:#3B241F; --on-oud:#F7EFDD;
+    --line:#45342E; color-scheme:dark;
+    --shadow:0 1px 2px rgba(0,0,0,.25), 0 8px 24px rgba(0,0,0,.3);
+  }}
+  :root[data-theme="dark"]{
+    --bg:#1F1613; --surface:#2C2420; --surface-2:#352A25;
+    --ink:#F1E9D6; --ink-soft:#BBA894;
+    --oud:#CF5A66; --oud-deep:#B5323E; --oud-soft:#3B241F; --on-oud:#F7EFDD;
+    --line:#45342E; color-scheme:dark;
+    --shadow:0 1px 2px rgba(0,0,0,.25), 0 8px 24px rgba(0,0,0,.3);
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Amiri','Scheherazade New',serif; line-height:1.5;
+    -webkit-font-smoothing:antialiased; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; direction:rtl;
+    padding-left:max(16px,env(safe-area-inset-left,0px));
+    padding-right:max(16px,env(safe-area-inset-right,0px));
+    padding-block:26px 44px; }
+
+  /* theme toggle */
+  .top{ display:flex; justify-content:flex-start; }
+  .toggle{ appearance:none; border:1px solid var(--line); background:var(--surface);
+    color:var(--ink); width:40px; height:40px; border-radius:50%; cursor:pointer;
+    font-size:18px; line-height:1; display:grid; place-items:center; box-shadow:var(--shadow); }
+  .toggle:focus-visible{ outline:2px solid var(--oud); outline-offset:2px; }
+
+  /* hero */
+  .hero{ text-align:center; margin-top:6px; }
+  .avatar{ width:116px; height:116px; border-radius:50%; margin:0 auto 16px;
+    background:radial-gradient(circle at 50% 35%, var(--surface), var(--surface-2));
+    border:2px solid var(--oud); display:grid; place-items:center;
+    box-shadow:var(--shadow); position:relative; }
+  .avatar span{ font-size:46px; font-weight:700; color:var(--oud); }
+  .avatar small{ position:absolute; bottom:-9px; left:50%; transform:translateX(-50%);
+    background:var(--oud); color:var(--on-oud); font-size:11px; padding:2px 9px;
+    border-radius:20px; white-space:nowrap; }
+  h1{ font-size:34px; font-weight:700; margin:14px 0 4px; letter-spacing:.3px; text-wrap:balance; }
+  .role{ color:var(--oud); font-size:17px; letter-spacing:1px; margin-bottom:12px; }
+  .bio{ color:var(--ink); font-size:19px; max-width:34ch; margin:0 auto; }
+  .rule{ width:64px; height:3px; background:var(--oud); border-radius:2px; margin:18px auto 0; opacity:.8; }
+
+  /* social row */
+  .socials{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-top:20px; }
+  .ico{ width:44px; height:44px; border-radius:50%; border:1px solid var(--line);
+    background:var(--surface); color:var(--oud); display:grid; place-items:center; box-shadow:var(--shadow); }
+  .ico svg{ width:22px; height:22px; }
+
+  /* sections */
+  section{ margin-top:34px; }
+  .eyebrow{ display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+  .eyebrow b{ color:var(--oud); font-size:14px; font-weight:700; letter-spacing:3px; }
+  .eyebrow .ln{ flex:1; height:1px; background:var(--line); }
+
+  /* diwan cards */
+  .books{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .book{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:14px; box-shadow:var(--shadow); display:flex; flex-direction:column; }
+  .cover{ aspect-ratio:3/4; border-radius:10px; margin-bottom:12px; padding:14px;
+    background:linear-gradient(150deg, var(--oud-deep), var(--oud));
+    color:var(--on-oud); display:flex; align-items:flex-end; }
+  .cover b{ font-size:17px; font-weight:700; line-height:1.4; text-wrap:balance; }
+  .book .t{ font-size:16px; font-weight:700; margin-bottom:10px; min-height:0; }
+  .status{ margin-top:auto; text-align:center; font-weight:700; font-size:14px; padding:7px 10px; border-radius:20px; }
+  .status.on{ color:var(--on-oud); background:var(--oud); }
+  .status.soon{ color:var(--ink-soft); background:var(--surface-2); border:1px dashed var(--line); }
+  .buybar{ margin-top:16px; }
+  .buybar small{ display:block; color:var(--oud); font-weight:700; font-size:14px; letter-spacing:2px; margin-bottom:10px; }
+  .buygrid{ display:flex; flex-direction:column; gap:9px; }
+  .buygrid .btn{ font-size:15px; padding:11px 14px; }
+
+  /* buttons */
+  .btn{ display:block; text-align:center; text-decoration:none; border-radius:12px;
+    font-family:inherit; font-size:16px; font-weight:700; padding:11px 16px; cursor:pointer; border:1px solid transparent; }
+  .btn.solid{ background:var(--oud); color:var(--on-oud); }
+  .btn.ghost{ background:transparent; color:var(--oud); border-color:var(--oud); }
+  .btn.block{ width:100%; }
+  a.btn:focus-visible,.toggle:focus-visible{ outline:2px solid var(--oud); outline-offset:2px; }
+  .cta-row{ display:flex; gap:10px; margin-top:22px; }
+  .cta-row .btn{ flex:1; }
+
+  /* poem cards */
+  .poem{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:16px 18px; box-shadow:var(--shadow); margin-bottom:12px; }
+  .poem .t{ font-size:19px; font-weight:700; display:flex; align-items:center; gap:8px; }
+  .poem .verse{ color:var(--ink); font-size:18px; margin:8px 0 12px; font-style:italic; opacity:.92; }
+  .poem .foot{ display:flex; align-items:center; gap:14px; }
+  .lnk{ color:var(--oud); text-decoration:none; font-weight:700; font-size:15px; background:none; border:none; cursor:pointer; font-family:inherit; padding:0; }
+  .tag{ font-size:12px; color:var(--ink-soft); border:1px solid var(--line); border-radius:20px; padding:1px 9px; font-style:normal; }
+
+  /* video cards */
+  .vid{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    overflow:hidden; box-shadow:var(--shadow); margin-bottom:12px; }
+  .thumb{ aspect-ratio:16/9; position:relative; display:grid; place-items:center;
+    background:linear-gradient(135deg, var(--surface-2), var(--oud-soft)); }
+  .play{ width:52px; height:52px; border-radius:50%; background:var(--oud); display:grid; place-items:center; box-shadow:var(--shadow); }
+  .play svg{ width:22px; height:22px; color:var(--on-oud); margin-right:-3px; }
+  .vcap{ padding:12px 16px; font-size:17px; font-weight:700; display:flex; align-items:center; justify-content:space-between; gap:10px; }
+
+  /* whatsapp */
+  .wa{ background:linear-gradient(150deg, var(--oud-deep), var(--oud)); color:var(--on-oud);
+    border-radius:var(--radius); padding:22px; text-align:center; box-shadow:var(--shadow); }
+  .wa h3{ margin:8px 0 6px; font-size:22px; }
+  .wa p{ margin:0 0 16px; font-size:16px; opacity:.92; }
+  .wa .btn{ background:var(--on-oud); color:var(--oud-deep); }
+  .wa .wico{ width:40px; height:40px; margin:0 auto; color:var(--on-oud); }
+
+  footer{ margin-top:36px; text-align:center; color:var(--ink-soft); font-size:14px; }
+  .note{ margin-top:14px; font-size:13px; color:var(--ink-soft); background:var(--surface-2);
+    border:1px dashed var(--line); border-radius:10px; padding:9px 12px; }
+
+  @media (max-width:360px){ .books{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <button class="toggle" id="themeBtn" aria-label="تبديل الوضع الليلي">◐</button>
+  </div>
+
+  <header class="hero">
+    <div class="avatar"><span>أ&nbsp;ع</span><small>ضع صورتك</small></div>
+    <h1>أمير عمر باخميس</h1>
+    <div class="role">طبيبٌ · شاعرٌ وكاتب</div>
+    <p class="bio">أكتبُ الشِّعرَ كثيرًا، والنثرَ أحيانًا… وأحبُّ دائمًا.</p>
+    <div class="rule"></div>
+
+    <div class="socials">
+      <a class="ico" href="https://x.com/ameeromar_1997" title="X" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3l-6.6 7.6L22 21h-5.9l-4.3-5.6L6.9 21H3.9l7-8.1L2.4 3h6l3.9 5.2L17.5 3zm-1 16h1.6L7.5 4.7H5.8L16.5 19z"/></svg></a>
+      <a class="ico" href="https://www.instagram.com/ameeromar_1997" title="إنستغرام" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+      <a class="ico" href="https://www.facebook.com/AmeerOmarSalem" title="فيسبوك" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15 8.5h2V5.5h-2.3C12.1 5.5 11 7 11 9v1.6H9v3h2V22h3v-8.4h2.2l.4-3H14V9c0-.4.3-.5.6-.5z"/></svg></a>
+      <a class="ico" href="https://www.youtube.com/@ameeromar_1997" title="يوتيوب" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2a3 3 0 00-2-2.1C18.2 5.6 12 5.6 12 5.6s-6.2 0-8 .5a3 3 0 00-2 2.1C1.5 10 1.5 12 1.5 12s0 2 .5 3.8a3 3 0 002 2.1c1.8.5 8 .5 8 .5s6.2 0 8-.5a3 3 0 002-2.1c.5-1.8.5-3.8.5-3.8s0-2-.5-3.8zM10 15V9l5.2 3L10 15z"/></svg></a>
+      <a class="ico" href="https://www.snapchat.com/add/ameeromar_1997" title="سناب شات" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c2.2 0 3.7 1.7 3.7 4 0 .7 0 1.3-.1 1.9.3.2.7.3 1.1.1.2 0 .9-.3 1.2.2.2.4-.1.8-.9 1.1-.3.1-1.2.4-1.4.9-.1.4.3.9.9 1.6.2.2 1 1 1 1.6 0 .4-.5.6-1 .7-.3 0-.5.2-.6.5-.1.4-.2.8-.7.8-.4 0-.8-.2-1.5-.2-.9 0-1.3.8-2.7 1.4-.6.2-1.2.2-1.8 0-1.4-.6-1.8-1.4-2.7-1.4-.7 0-1.1.2-1.5.2-.5 0-.6-.4-.7-.8-.1-.3-.3-.5-.6-.5-.5-.1-1-.3-1-.7 0-.6.8-1.4 1-1.6.6-.7 1-1.2.9-1.6-.2-.5-1.1-.8-1.4-.9-.8-.3-1.1-.7-.9-1.1.3-.5 1-.2 1.2-.2.4.2.8.1 1.1-.1-.1-.6-.1-1.2-.1-1.9 0-2.3 1.5-4 3.7-4z"/></svg></a>
+      <a class="ico" href="https://wa.me/966506766954" title="واتساب" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 00-7.7 13.6L3 21l4.5-1.2A9 9 0 1012 3zm0 1.8a7.2 7.2 0 11-3.7 13.4l-.3-.2-2.7.7.7-2.6-.2-.3A7.2 7.2 0 0112 4.8zM8.9 7.8c-.2 0-.5 0-.7.4-.3.4-.9 1-.9 2.3s1 2.7 1.1 2.9c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.5-.3l-1.7-.8c-.2-.1-.4-.1-.6.1l-.7.8c-.1.2-.3.2-.5.1-.7-.3-1.4-.6-2.2-1.6-.2-.3 0-.4.1-.6l.5-.6c.1-.2 0-.4 0-.5l-.7-1.7c-.2-.5-.4-.4-.6-.4h-.4z"/></svg></a>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn solid" href="#diwan">ديواني</a>
+      <a class="btn ghost" href="#whatsapp">قناة واتساب</a>
+    </div>
+  </header>
+
+  <section id="diwan">
+    <div class="eyebrow"><b>الدواوين</b><span class="ln"></span></div>
+    <div class="books">
+      <div class="book">
+        <div class="cover"><b>ليقرأَ الحبُّ في عينيكِ أكوابَه</b></div>
+        <div class="t">الديوان الأول</div>
+        <div class="status on">متوفّر الآن</div>
+      </div>
+      <div class="book">
+        <div class="cover"><b>فليسَ بوسعِكِ العشقُ</b></div>
+        <div class="t">الديوان الثاني</div>
+        <div class="status soon">قريبًا</div>
+      </div>
+    </div>
+    <div class="buybar">
+      <small>اقتناء الديوان الأول</small>
+      <div class="buygrid">
+        <a class="btn solid" href="https://kayanstore.com/product/let-love-read-its-cups-in-your-eyes/">دار كيان — ورقي</a>
+        <a class="btn ghost" href="https://kayanstore.com/product/let-love-read-in-your-eyes-its-cups-are-electronic/">دار كيان — إلكتروني</a>
+        <a class="btn ghost" href="https://amzn.eu/d/0g8lEfpX">أمازون</a>
+        <a class="btn ghost" href="https://www.noon.com/saudi-ar/product/Z05CC1A93CC616CA2DA1BZ/p/?o=d51f4b5261095dfd">نون</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="poems">
+    <div class="eyebrow"><b>من الشِّعر</b><span class="ln"></span></div>
+    <div class="poem">
+      <div class="t">وحدَها تبقى <span class="tag">نموذج</span></div>
+      <div class="verse">وفي القلبِ من ذِكراكِ ما لا يُقال… / ويبقى الحنينُ وإن طالَ الرحيل.</div>
+      <div class="foot"><button class="lnk">▸ استماع</button><a class="lnk" href="#">القصيدة كاملة</a></div>
+    </div>
+    <div class="poem">
+      <div class="t">رسالةٌ لم تُرسَل <span class="tag">نموذج</span></div>
+      <div class="verse">كتبتُ إليكِ ثم محوتُ السطور… / فما كلُّ ما يُكتبُ يُقرَأ.</div>
+      <div class="foot"><button class="lnk">▸ استماع</button><a class="lnk" href="#">القصيدة كاملة</a></div>
+    </div>
+    <div class="poem">
+      <div class="t">على ضفّةِ الصمت <span class="tag">نموذج</span></div>
+      <div class="verse">هُنا يسكنُ المعنى على ضفّةِ الصمتِ… / ويُولَدُ من رمادِ الكلامِ كلامُ.</div>
+      <div class="foot"><button class="lnk">▸ استماع</button><a class="lnk" href="#">القصيدة كاملة</a></div>
+    </div>
+  </section>
+
+  <section id="videos">
+    <div class="eyebrow"><b>مرئيّات</b><span class="ln"></span></div>
+    <div class="vid">
+      <div class="thumb"><div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="vcap"><span>قصيدة مُلقاة — نموذج</span><span class="tag">فيديو</span></div>
+    </div>
+    <div class="vid">
+      <div class="thumb"><div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="vcap"><span>أمسية شعرية — نموذج</span><span class="tag">فيديو</span></div>
+    </div>
+  </section>
+
+  <section id="whatsapp">
+    <div class="wa">
+      <div class="wico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 00-7.7 13.6L3 21l4.5-1.2A9 9 0 1012 3zm0 1.8a7.2 7.2 0 11-3.7 13.4l-.3-.2-2.7.7.7-2.6-.2-.3A7.2 7.2 0 0112 4.8zM8.9 7.8c-.2 0-.5 0-.7.4-.3.4-.9 1-.9 2.3s1 2.7 1.1 2.9c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.5-.3l-1.7-.8c-.2-.1-.4-.1-.6.1l-.7.8c-.1.2-.3.2-.5.1-.7-.3-1.4-.6-2.2-1.6-.2-.3 0-.4.1-.6l.5-.6c.1-.2 0-.4 0-.5l-.7-1.7c-.2-.5-.4-.4-.6-.4h-.4z"/></svg></div>
+      <h3>قناة الشِّعر على واتساب</h3>
+      <p>كلُّ جديدٍ يصلُكَ مباشرةً — بلا خوارزمية، وبلا ضجيج.</p>
+      <a class="btn block" href="#">انضمّ إلى القناة</a>
+    </div>
+  </section>
+
+  <footer>
+    <div>© أمير عمر باخميس</div>
+    <div class="note">هذا نموذجٌ مبدئيّ — الصورة والقصائد والفيديوهات والروابط تُستبدَل بأعمالك الحقيقية.</div>
+  </footer>
+</div>
+
+<script>
+  (function(){
+    var root=document.documentElement, btn=document.getElementById('themeBtn');
+    function sysDark(){ return window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches; }
+    var saved=null; try{ saved=localStorage.getItem('aob-theme'); }catch(e){}
+    if(saved==='dark'||saved==='light') root.setAttribute('data-theme',saved);
+    function isDark(){ var t=root.getAttribute('data-theme'); return t?t==='dark':sysDark(); }
+    function paint(){ btn.textContent=isDark()?'☀':'☾'; }
+    paint();
+    btn.addEventListener('click',function(){
+      var next=isDark()?'light':'dark';
+      root.setAttribute('data-theme',next);
+      try{ localStorage.setItem('aob-theme',next); }catch(e){}
+      paint();
+    });
+  })();
+</script>
+</body>
+</html>
